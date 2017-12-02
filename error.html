@@ -67,18 +67,16 @@
 </body>
 </html>
 <script>
-	let span = document.querySelector("span");
-	let num = 5;
-	var t = setInterval(function(){
-		span.innerText = num;
-		num --;
-		if(num < 0){
-			clearInterval(t);
-			location.replace('登录.html');
+	let span = document.querySelector("span");    //调用到函数中，获取span元素			
+	var t = setInterval(function(){				//时间函数
+		span.innerText --;									//开始递减
+		if(span.innerText < 1){							//如果num<0的时候
+			clearInterval(t);					//清除时间函数，停止倒计时
+			location.replace('登录.html');		//自动返回登录页面
 		}
-	},1000);
-	let submit = document.querySelector('.submit');
-	submit.onclick = function(){
-		location.replace('登录.html');
+	},1000);									//秒数时间
+	let submit = document.querySelector('.submit');		//调用sunmit
+	submit.onclick = function(){						//事件触发
+		location.replace('登录.html');					
 	}
 </script>
